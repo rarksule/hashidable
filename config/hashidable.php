@@ -10,7 +10,7 @@ return [
     /**
      * Length of the generated hashid.
      */
-    'length' => env('HASHID_LENGTH',16),,
+    'length' => env('HASHID_LENGTH',16),
 
     /**
      * Character set used to generate the hashids.
