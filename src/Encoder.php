@@ -46,10 +46,8 @@ class Encoder
 
     public function hashSaltFromString(string $salt)
     {
-        $moreSalt = $salt. '\\' . ($this->config['salt'] ?? '');
-        $input = array_fill(0, $this->config['length'], $moreSalt);
-
-        return hash('sha512', serialize($input));
+        $input = sprintf("%s\\%s", $salt, $this->config['salt'] ?? '');
+        return hash('sha512', $input);
     }
 
     private function wrap(string $hash)
